@@ -60,11 +60,11 @@ with open(file_name, 'r') as file:
             bank = int(address[22:24], 2)
             bank_group = int(address[24:27], 2)
 
-        # ------------ Storing the values in the dictionary --------------
-        if Time in trace_file_dictionary.keys():
-          trace_file_dictionary[Time].append([int(core), operation, str(row), str(high_column_bits), str(bank), str(bank_group)])
-        else:
-          trace_file_dictionary[Time] = [[int(core), operation, str(row), str(high_column_bits), str(bank), str(bank_group)]]
+            # ------------ Storing the values in the dictionary --------------
+            if Time in trace_file_dictionary.keys():
+              trace_file_dictionary[Time].append([int(core), operation, str(row), str(high_column_bits), str(bank), str(bank_group)])
+            else:
+              trace_file_dictionary[Time] = [[int(core), operation, str(row), str(high_column_bits), str(bank), str(bank_group)]]
 
 p_bg = 100
 p_b = 100
@@ -471,5 +471,3 @@ while len(sorted_list) != 0:
 # ----- Checking if the main queue is empty or not ------
 while len(add_retire_list) != 0:
     pop_add_retire_list(add_retire_list)
-
-
